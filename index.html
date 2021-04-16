@@ -19,7 +19,6 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -38,7 +37,83 @@
                         <a class="nav-link" href="#contact">Contactanos</a>
                     </li>
                 </ul>
+                <!--buscar-->
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">Buscar</button> 
+                <form class="form-inline">
+                    <input class="form-buscar mr-sm-2" type="text" id="txtbuscar" />              
+                </form>                    
             </div>
+            <!--Login-->         
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="btnlogin">Login</button>
+            <div id="id01" class="modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header alert-dark">
+                            <h5 class="modal-title">"Ingresa al Portal"</h5>                        
+                        </div>
+                    <div class="modal-body">
+                        <img src="img/login.png" class="img-fluid pb-md-2" id="img01">
+                        <br>
+                        <form role="form">
+                        <div class="form-group">                         
+                            <label for="">Usuario:</label>
+                            <input type="text" class="form-control" id=""/>
+                        </div>
+                        <div class="form-group">                         
+                            <label for="">Password:</label>
+                            <input type="password" class="form-control" id=""/>
+                        </div>
+                        </form>                  
+                    </div>
+                        <div class="modal-footer alert-dark">
+                            <button type="submit">Ingresa</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Recuerda me
+                            </label>   
+                            <!-- Cerrar-->
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Registrar-->
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="btnlogin">Registro</button>
+            <div id="id02" class="modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header alert-dark">
+                            <h5 class="modal-title">"Registrate al Portal"</h5>                        
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/iniciar.png" class="img-fluid pb-md-2">
+                            <h6>  </h6>
+                            <form role="form">
+                            <div class="form-group">                         
+                                <label for="">Nombre:</label>
+                                <input type="text" class="form-control" id=""/>
+                            </div>
+                            <div class="form-group">                         
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id=""/>
+                            </div>    
+                            <div class="form-group">                         
+                                <label for="">Password:</label>
+                                <input type="password" class="form-control" id=""/>
+                            </div>
+                            <div class="form-group">                         
+                                <label for="">Repetir Password:</label>
+                                <input type="password" class="form-control" id=""/>
+                            </div>
+                            </form>                  
+                        </div>
+                        <div class="modal-footer alert-dark">
+                            <button type="submit">Aceptar</button>                   
+                            <!-- Cerrar-->
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>                
         </div>
     </nav>
     <!-- Speach-->
@@ -478,12 +553,19 @@
             <small>Copyright © 2020 FullMec. Todos los derechos reservados.</small>
         </div>
     </footer>
-
     <!--JavaScript -->
-
     <script src="/js/jquery.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+        var modal = document.getElementById('id01');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+          {
+            modal.style.display = "none";
+          }
+        }
+      </script>
 </body>
-
 </html>

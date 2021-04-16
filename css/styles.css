@@ -39,8 +39,15 @@ a:hover { text-decoration: none; }
     min-width: 50px;
     border-radius: 10px;
     display: block;
-    background-color: #283e63;
+    background-color: #286332;
+    color: #ffffff;
     
+}
+.btnlogin{
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 20px;
+    margin: 4px;    
 }
 .btn-primary {
     background-color: #000000;
@@ -62,6 +69,13 @@ section { padding: 120px 0; }
 }
 .full-width {
     width: 100%;
+}
+#txtbuscar {
+    font-size: 10px;
+    border: 1px solid #cacaca;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px;
 }
 .form-control {
     font-size: 14px;
