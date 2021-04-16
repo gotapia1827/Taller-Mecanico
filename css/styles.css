@@ -51,8 +51,10 @@ a:hover { text-decoration: none; }
 .btnlogin{
     background-color: #000000;
     color: #ffffff;
-    border-radius: 20px;
-    margin: 4px;    
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 4px;
+    padding: 4px 10px;
 }
 .btn-primary {
     background-color: #000000;
@@ -76,7 +78,7 @@ section { padding: 120px 0; }
     width: 100%;
 }
 #txtbuscar {
-    font-size: 10px;
+    font-size: 15px;
     border: 1px solid #cacaca;
     padding: 10px;
     border-radius: 20px;
