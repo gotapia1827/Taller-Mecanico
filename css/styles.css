@@ -9,6 +9,11 @@ html {
 body {
     font-family: 'Titillium Web', sans-serif;
 }
+#img01{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .bgDark { background-color: #000000; }
 .bgLight { background-color: #ffffff; }
 .bgLightGrey { background-color: #e9e9e98a;; }
