@@ -64,7 +64,7 @@
                         </div>
                         <div class="form-group">                         
                             <label for="">Password:</label>
-                            <input type="password" class="form-control"/>
+                            <input type="password3" class="form-control"/>
                         </div>
                         </form>                  
                     </div>
@@ -101,11 +101,11 @@
                             </div>    
                             <div class="form-group">                         
                                 <label for="">Password:</label>
-                                <input type="password" class="form-control"/>
+                                <input type="password1" class="form-control"/>
                             </div>
                             <div class="form-group">                         
                                 <label for="">Repetir Password:</label>
-                                <input type="password" class="form-control"/>
+                                <input type="password2" class="form-control"/>
                             </div>
                             </form>                  
                         </div>
@@ -497,7 +497,7 @@
             </div>
         </div>
     </section>    
-    <!--VIN-->
+    <!--Api-->
     <section id="contact" class="bgvin">
         <div class="container">
             <div class="row">
@@ -546,36 +546,38 @@
                         que era tu mecánico, estaremos siempre encantados de ayudarte.</h3>
                 </div>
                 <div class="col-md-6 mt-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                    <form id="form-contacto" class="needs-validation">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Nombre" placeholder="Nombre" minlength="3" required> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Apellido" placeholder="Apellido" minlength="3" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="Email" placeholder="Email" required> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="NombreEmpresa" placeholder="Nombre de Empresa" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="Telefono" placeholder="Numero de contacto" minlength="9" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-primary full-width" type="submit">Enviar</button>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Apellido">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre de Empresa">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Numero de contacto">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <a href="" class="btn btn-primary full-width">Enviar</a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -596,8 +598,11 @@
     <!--JavaScript -->
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/vin.js"></script> 
+    <script src="/js/auto.js"></script>     
     <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.validate.js"></script>
+
     <script>
         var modal = document.getElementById('id01');
         window.onclick = function(event) 
@@ -608,5 +613,71 @@
           }
         }
     </script>
+
+    <script>
+    $(function(){
+        $("#form-contacto").validate(
+            {
+                rules: {
+                    Nombre: {
+                        required: true
+                    },
+
+                    Apellido: {
+                        required: true
+                    },
+                    Email: {
+                        required: true,
+                        Email: true
+                    },
+                    NombreEmpresa: {
+                        required: true
+                    },
+                    Telefono: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Nombre: {
+                        required: 'Ingresa tu nombre',
+                        minlength: 'mínimo 3 caracteres'
+                    },
+                    Apellido:
+                    {
+                        required: "Ingresa tu apellido",
+                        minlength: "mínimo 3 caracteres" 
+                    },
+                    Email: {
+                        required: "Ingresa tu EMail",
+                        Email: "formato de correo no válido"
+                    },
+                    NombreEmpresa: {
+                        required: "Ingresa el nombre de tu empresa"
+                    },
+                    Telefono: {
+                        required: "Ingresa tu teléfono"
+                    }
+                }
+            });
+    });
+    </script>
+
+    <script>
+        (function() {"use strict";
+        window.addEventListener("load", function() {
+        var forms = document.getElementsByClassName("needs-validation");
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener("submit", function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+    
 </body>
 </html>

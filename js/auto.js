@@ -18,18 +18,10 @@ function traer(marca, model, año){
 }
 function crearimg(auto){
     const img = document.createElement('img');
-    img.id = "img1" ; img.src = auto.images['0'].link;
-
-    const br = document.createElement('br');
-    br.br;
-
-    const button = document.createElement('button');
-    button.button ; button.id = "button1" ; button.type = "Submit";
+    img.id = "img1" ; img.src = auto.images['0'].link;   
 
     const div = document.createElement('div');
-    div.append(img);
-    div.append(br);
-    div.append(button);   
+    div.append(img);   
 
     imagen.append(div);
 } 
